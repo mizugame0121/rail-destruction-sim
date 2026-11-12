@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+html, body, #game { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { color: #eef4f7; background: #101820; font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; touch-action: none; }
+canvas { display: block; width: 100%; height: 100%; }
+.panel { color: #eef4f7; background: rgba(15, 24, 33, .92); border: 1px solid rgba(255,255,255,.15); border-radius: 14px; box-shadow: 0 12px 40px #0008; backdrop-filter: blur(10px); }
+#menu { position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(440px, calc(100vw - 28px)); padding: 22px; }
+h1 { margin: 0 0 6px; font-size: 28px; } h1 small { font-size: 15px; color: #a9bdcb; font-weight: 500; }
+.note, .help { color: #b7c5cf; font-size: 13px; }
+label { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 12px 0; }
+select, button { color: inherit; background: #263746; border: 1px solid #536a7c; border-radius: 8px; padding: 10px 12px; font: inherit; }
+select { min-width: 175px; }
+button { cursor: pointer; touch-action: manipulation; }
+button:hover { background: #38536a; }
+button:active { transform: translateY(1px); }
+.primary { background: #bd4d35; border-color: #e77a5f; font-weight: 700; }
+.primary:hover { background: #d35c40; }
+#startButton { width: 100%; margin-top: 8px; }
+.hidden { display: none !important; }
+#hud { position: absolute; z-index: 2; left: 14px; top: 14px; width: min(340px, calc(100vw - 28px)); padding: 12px 14px; }
+#hud > div:first-child, .hud-bottom { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+#speedLabel { font-variant-numeric: tabular-nums; font-weight: 700; }
+.meter { height: 8px; background: #35434d; border-radius: 8px; margin: 10px 0; overflow: hidden; }
+#damageBar { display: block; width: 0%; height: 100%; background: linear-gradient(90deg, #70bd77, #f3b54a, #e64b3c); transition: width .2s; }
+.hud-bottom button { padding: 6px 9px; font-size: 13px; }
+#mobileControls { position: absolute; z-index: 2; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); transform: translateX(-50%); display: flex; gap: 9px; width: min(560px, calc(100vw - 24px)); }
+#mobileControls button { flex: 1; min-height: 58px; font-weight: 700; background: #203342eF; }
+#mobileControls .primary { background: #bd4d35; }
+#message { position: absolute; z-index: 2; top: 22%; left: 50%; transform: translateX(-50%); padding: 10px 16px; border-radius: 10px; background: #111d; font-weight: 700; }
+@media (max-width: 520px) { #menu { padding: 17px; } label { margin: 9px 0; } select { min-width: 145px; } #hud { top: 8px; left: 8px; width: calc(100vw - 16px); } }
